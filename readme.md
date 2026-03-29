@@ -1,4 +1,4 @@
-Absolutely! I’ll write a **comprehensive API documentation** for your crypto payment e-commerce system, based on the scripts and structure we’ve built. I’ll include routes, request/response examples, and explanations for ETH & USDT payments.
+
 
 ---
 
@@ -369,6 +369,3 @@ GET /api/orders/stats
 
 ---
 
-If you want, I can **also generate a Swagger/OpenAPI JSON file** for this project so your `/api/api-docs` endpoint is fully functional with all these endpoints.
-
-Do you want me to do that?
