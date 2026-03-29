@@ -2,7 +2,7 @@ import   Express  from "express";
 import express from 'express'
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import mongoSanitize from "express-mongo-sanitize";
+import mongoSanitize from 'express-mongo-sanitize'
 import xss from "xss-clean";
 import hpp from "hpp";
 import cors from "cors";
@@ -10,6 +10,17 @@ import cors from "cors";
 // ==================== SECURITY CONFIG ====================
 
 export function applySecurity(app: Express) {
+  //  Make req.query writable before sanitization
+  app.use((req: any, res: any, next: any) => {
+    Object.defineProperty(req, "query", {
+      value: { ...req.query },
+      writable: true,
+      enumerable: true,
+      configurable: true,
+    });
+    next();
+  });
+
   // 🔐 Trust proxy (important for VPS / nginx)
   app.set("trust proxy", 1);
 
