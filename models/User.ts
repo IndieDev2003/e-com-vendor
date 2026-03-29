@@ -4,7 +4,7 @@ import mongoose, { Schema, Document } from "mongoose";
 export interface IUser extends Document {
   username: string;
   password: string;
-  role: "Admin" | "Vendor" | "User";
+  role: "Admin" | "User";
   isVerified: boolean;
   createdAt: Date;
   updatedAt: Date;
@@ -19,7 +19,7 @@ const UserSchema = new Schema<IUser>(
       unique: true,
       trim: true,
       lowercase: true,
-      minlength: [3, "Username must be at least 3 characters"],
+      minlength: [5, "Username must be at least 3 characters"],
       maxlength: [30, "Username cannot exceed 30 characters"],
       match: [
         /^[a-zA-Z0-9_]+$/,

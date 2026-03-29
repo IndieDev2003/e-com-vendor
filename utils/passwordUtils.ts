@@ -103,7 +103,7 @@ export const validatePasswordStrength = (
    const trimmedUsername = username.trim();
 
    // Length check
-   const MIN = 3;
+   const MIN = 5;
    const MAX = 30;
    if (trimmedUsername.length < MIN) {
      return {

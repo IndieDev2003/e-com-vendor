@@ -12,6 +12,7 @@ import { applySecurity } from "./config/security.ts";
 import { AuthRouter } from "./express/routes/auth.routes.ts";
 import { ProductRouter } from "./express/routes/products.routes.ts";
 import OrderRouter from "./express/routes/order.routes.ts";
+import VerificationRouter from "./express/routes/verification.routes.ts";
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use("/api/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/api/auth", AuthRouter);
 app.use("/api/product", ProductRouter);
 app.use("/api/orders", OrderRouter);
+app.use("/api/verify",VerificationRouter)
 
 // ==================== BULL BOARD (PROTECTED) ====================
 
