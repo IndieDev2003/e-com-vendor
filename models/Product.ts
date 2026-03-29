@@ -45,9 +45,9 @@ const ProductSchema = new Schema<IProduct>(
       default: "Uncategorized",
       enum: {
         values: [
-         "Drugs",
-         "Weapons",
-         "Data",
+         "Electronics ",
+         "Household",
+         "Office",
          
         ],
         message: "{VALUE} is not a valid category",
